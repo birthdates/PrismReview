@@ -115,10 +115,10 @@ bot.on('message', async (msg) => {
       // format review
       review = (review.length > 1000 ? review.substring(0, 1000) : review);
       review = capitalizeFirstLetter(review);
-      await bot.sendMessage(chatId, `Purchased: ${purchased}\nRating: ${rating}\nReview: ${review}🌟\nThank you for your review!`);
+      await bot.sendMessage(chatId, `Purchased: ${purchased}\nRating: ${rating}/10\nReview: ${review}🌟\nThank you for your review!`);
       
       await client.sRem(REDIS_KEY, userId);
-      bot.sendMessage(GROUP_CHAT, "```REVIEW New review from " + (anom ? "Anonymous" : "@" + msg.from.username) + "\nRating 🌟: " + rating + "\nReview: " + review + "\nPurchased: " + purchased + "```", {
+      bot.sendMessage(GROUP_CHAT, "```REVIEW New review from " + (anom ? "Anonymous" : "@" + msg.from.username) + "\nRating 🌟: " + rating + "/10\nReview: " + review + "\nPurchased: " + purchased + "```", {
         parse_mode: 'MarkdownV2'
       });
       break;
