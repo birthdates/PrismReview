@@ -12,3 +12,6 @@ Watch [this](https://core.telegram.org/bots/tutorial) tutorial on how to setup a
 * Purchased
 * Anonymous
 * Whitelisting system (only certain customers can review **REQUIRES TELEGRAM USER ID**)
+
+## Examples
+![Example](examples/review.png)
